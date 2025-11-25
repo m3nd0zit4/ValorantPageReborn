@@ -48,7 +48,7 @@ body {
   }
 
   .floating-nav {
-    @apply bg-black rounded-lg border;
+    @apply bg-[#111] border rounded-lg;
   }
 
   .absolute-center {
@@ -56,7 +56,7 @@ body {
   }
 
   .flex-center {
-    @apply flex justify-center items-center;
+    @apply flex items-center justify-center;
   }
 
   .mask-clip-path {
@@ -85,22 +85,22 @@ body {
   }
 
   .animated-word {
-    @apply special-font font-zentry font-black opacity-0;
+    @apply font-black opacity-0 special-font font-zentry;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
     transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
   }
 
   .bento-tilt_1 {
-    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative col-span-2 overflow-hidden transition-transform duration-300 ease-out rounded-md border-hsla;
   }
 
   .bento-tilt_2 {
-    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative col-span-1 row-span-1 overflow-hidden transition-transform duration-300 ease-out rounded-md;
   }
 
   .bento-title {
-    @apply uppercase md:text-6xl text-4xl font-black font-zentry;
+    @apply text-4xl font-black uppercase md:text-6xl font-zentry;
   }
 
   .story-img-container {
@@ -119,11 +119,11 @@ body {
   }
 
   .gallery-img-container {
-    @apply size-64 overflow-hidden bg-violet-300;
+    @apply overflow-hidden size-64 bg-violet-300;
   }
 
   .gallery-img {
-    @apply size-full bg-cover;
+    @apply bg-cover size-full;
   }
 
   .gallery-img-4 {
@@ -144,7 +144,7 @@ body {
 }
 
 .indicator-line {
-  @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
+  @apply w-px h-1 transition-all duration-200 ease-in-out bg-white rounded-full;
 }
 
 .indicator-line.active {
