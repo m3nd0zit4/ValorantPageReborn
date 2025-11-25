@@ -139,7 +139,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-
+            
             <h1 className="absolute text-red-500 special-font hero-heading bottom-5">
                 start playing
             </h1>

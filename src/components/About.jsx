@@ -28,13 +28,13 @@ const About = () => {
     return ( 
         <div id="about" className="w-screen min-h-screen">
             <div className="relative flex flex-col items-center gap-5 mb-8 mt-36">  
-                <h2 className="font-general text-sm uppercase md:text-[10px]"> Welcome to VALORANT</h2>
+                <h2 className="font-general text-sm uppercase md:text-[10px] text-black-500"> Welcome to VALORANT</h2>
 
                 <AnimatedTitle title="Enter to this new season <br /> of epic <br /> characters and maps" containerClass="mt-5 !text-red-500 text-center"/>
 
                 <div className="about-subtext">
-                    <p>An epic adventure awaits here </p>
-                    <p>This journey will be different for all players</p>
+                    <p className="text-black-500">An epic adventure awaits here </p>
+                    <p className="text-black-500">This journey will be different for all players</p>
                 </div>
             </div>
 
