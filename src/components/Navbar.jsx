@@ -19,6 +19,8 @@ const Navbar = () => {
     const { y : currentScrollY } = useWindowScroll();
 
     useEffect(() => {
+        if (!navContainerRef.current) return;
+        
         if(currentScrollY === 0) {
             setIsNavVisible(true);
             navContainerRef.current.classList.remove('floating-nav')
@@ -31,7 +33,7 @@ const Navbar = () => {
         }
 
         setLastScrollY(currentScrollY)
-    }, [currentScrollY])
+    }, [currentScrollY, lastScrollY])
 
     useEffect(() => {
         gsap.to(navContainerRef.current, {
