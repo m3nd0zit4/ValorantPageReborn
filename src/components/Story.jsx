@@ -1,0 +1,96 @@
+import AnimatedTitle from "./AnimatedTitle";
+import { useRef } from "react";
+import gsap from "gsap";
+import RoundedCorners from "./RoundedCorners";
+import Button from "./Button";
+
+const Story = () => {
+    const frameRef = useRef('null')
+
+    const handleMouseLeave = () => {
+        const element = frameRef.current;
+
+        gsap.to(element, {
+            duration: 0.3,
+            rotateX: 0, 
+            rotateY: 0,
+            ease: 'power1.inOut'
+        })
+    }
+
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        const element = frameRef.current;
+
+        if(!element) return;
+
+        const rect = element.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        gsap.to(element, {
+            duration: 0.3,
+            rotateX, rotateY,
+            transformPerspective: 500,
+            ease: 'power1.inOut'
+        })
+    }
+
+    return ( 
+        <section id='story' className="w-screen text-blue-50 min-h-dvh bg-black-500">
+            <div className="flex flex-col items-center py-10 pb-24 size-full">
+                <p className="font-general text-sm uppercase md:text-[10px]">The best fictional universe ( lore of VALORANT ) </p>
+
+                <div className="relative size-full">
+                    <AnimatedTitle 
+                        title = "Two mirror worlds <br /> at war <br /> over radianite."
+                        sectionId = "#story"
+                        containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
+                    />
+
+                    <div className="story-img-container">
+                        <div className="story-img-mask">
+                            <div className="story-img-content">
+                                <img 
+                                    ref={frameRef}
+                                    onMouseLeave={handleMouseLeave}
+                                    onMouseUp={handleMouseLeave}
+                                    onMouseEnter={handleMouseLeave}
+                                    onMouseMove={handleMouseMove}
+                                    src="/img/entrance.webp"
+                                    alt="entrance"
+                                    className="object-contain"
+                                />
+                            </div>
+                        </div>
+
+                        <RoundedCorners />
+
+                    </div>
+                </div>
+
+                <div className="flex justify-center w-full -mt-80 md:-mt-64 md:me-44 md:justify-end">
+                    <div className="flex flex-col items-center h-full w-fit md:items-start">
+                        <p className="max-w-sm mt-3 text-center font-circular-web text-blue-50 md:text-start">
+                            A war between reflections threatens existence. Discover the truth that defines the fate of two Earths.
+                        </p>
+
+                        <Button 
+                            id="realm-button"
+                            title="Cross the crack"
+                            containerClass="mt-5 !bg-red-500"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+     );
+}
+ 
+export default Story;
