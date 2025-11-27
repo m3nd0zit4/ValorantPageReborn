@@ -83,9 +83,7 @@ const Hero = () => {
             {isLoading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     <div className="three-body">
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
+                        <img src="/img/logo.png" alt="Valorant Loading" className="w-32 h-32 object-contain" />
                     </div>
                 </div>
             )}
